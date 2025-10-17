@@ -1,0 +1,11 @@
+# Promptfoo config and data files
+data/
+
+# macOS system files
+.DS_Store
+
+
+# Environment variable files
+.env
+.env.*
+!.env.example
