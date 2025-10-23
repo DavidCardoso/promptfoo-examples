@@ -2,6 +2,7 @@
 description: "Getting started"
 
 # Note: set configs and secrets via environment variables or CI secrets management
+# See: https://www.promptfoo.dev/docs/usage/command-line > Environment variables
 
 prompts:
   - "Convert this English to {{language}}: {{input}}"
@@ -12,6 +13,8 @@ providers:
   # - openai:gpt-5-mini
   # - anthropic:messages:claude-sonnet-4-20250514
   # - vertex:gemini-2.5-pro
+
+  # Custom providers
   - id: litellm:aws/claude-4-5-sonnet
     config:
       apiBaseUrl: https://litellm.sbp.ai
