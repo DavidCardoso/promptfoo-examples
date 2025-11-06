@@ -1,0 +1,23 @@
+# yaml-language-server: $schema=https://promptfoo.dev/config-schema.json
+description: Calling AWS Bedrock agent
+
+# Note: set configs and secrets via environment variables or CI secrets management
+# See: https://www.promptfoo.dev/docs/usage/command-line > Environment variables
+
+prompts:
+  - "Call agent to answer the following case {{id}}: {{message}} for {{barcode}} with {{timestamp}}"
+
+providers:
+  - id: bedrock-agent:my-default-agent
+    config:
+      # Required
+      agentId: <agent-id>
+      agentAliasId: <>agent-alias-id>
+      region: eu-west-1
+
+      # AWS Authentication (optional - uses default chain if not explicitly provided)
+      # export aws credentials via environment variables
+      # See: https://www.promptfoo.dev/docs/providers/bedrock-agents/#authentication
+
+tests:
+  - file://tests/*.yaml
